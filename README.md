@@ -510,4 +510,213 @@ Pay->>Worker: Transfer compensation
 
 This gap presents an opportunity for **parametric insurance systems** that rely on objective external triggers instead of manual claims.
 
+# 9. Technology Stack
+
+GigShield is implemented using a **scalable, modular technology stack** designed for distributed event-driven systems.  
+The architecture prioritizes **reliability, scalability, and low operational overhead**, enabling the platform to support large worker populations across geographically distributed zones.
+
+---
+
+## 9.1 Core Technology Stack
+
+| Layer | Technology |
+|------|-------------|
+| Frontend | React, TypeScript, Progressive Web App |
+| Backend | Node.js, Express |
+| Database | PostgreSQL |
+| Cache Layer | Redis |
+| Event Processing | Kafka / Redis Streams |
+| Machine Learning | Python, scikit-learn |
+| Geospatial Indexing | H3 |
+| Payments | Razorpay / UPI |
+| Blockchain Audit | Polygon |
+| Infrastructure | Docker, Cloud Hosting |
+
+---
+
+## 9.2 Infrastructure Overview
+
+The platform infrastructure is designed to separate **API services, event processing, machine learning workloads, and payment systems** to allow independent scaling.
+
+```mermaid
+flowchart TB
+
+User[Worker Application]
+
+User --> API[API Gateway]
+
+API --> Services[Backend Services]
+
+Services --> DB[(PostgreSQL)]
+Services --> Cache[(Redis)]
+
+Services --> Stream[Event Stream]
+
+Stream --> Workers[Claim Processing Workers]
+
+Workers --> ML[Machine Learning Services]
+
+Workers --> Payment[Payment Gateway]
+```
+
+
 GigShield addresses this gap by introducing a **data-driven, automated income protection platform** built specifically for the operational patterns of the gig economy.
+
+## 9.3 Technology Responsibilities
+
+| Technology | Role |
+|------------|------|
+| H3 | Converts worker GPS coordinates into geospatial grid cells for localized disruption detection |
+| Redis | Provides caching for frequently accessed data and temporary event buffering |
+| Kafka / Redis Streams | Distributes disruption events across system services through event-driven messaging |
+| PostgreSQL | Stores persistent data including worker profiles, policies, and claim records |
+| Node.js | Implements backend APIs, orchestration logic, and service coordination |
+| Python (scikit-learn) | Executes machine learning models for pricing, fraud detection, and risk prediction |
+| Razorpay / UPI | Handles payout transactions to workers |
+| Docker | Provides containerized deployment for scalable service infrastructure |
+
+---
+
+# 10. Machine Learning and Intelligence Layer
+
+Machine learning enables GigShield to improve **risk prediction, pricing accuracy, and fraud detection** by continuously learning from operational data. Instead of relying entirely on static rules, the system uses predictive models to analyze historical disruptions, worker activity patterns, and environmental signals.
+
+This intelligence layer allows the platform to dynamically adapt to changing risk conditions across geographic zones.
+
+---
+
+## 10.1 Machine Learning Components
+
+| Model | Purpose |
+|------|---------|
+| Premium Pricing Model | Dynamically estimates insurance premiums based on geographic and seasonal risk factors |
+| Fraud Detection Model | Detects anomalous claim patterns and suspicious activity |
+| Risk Prediction Model | Forecasts disruption probability in specific geographic zones |
+| Worker Activity Model | Identifies peak earning windows for adaptive coverage optimization |
+
+---
+
+## 10.2 ML Data Pipeline
+
+The machine learning pipeline aggregates data from multiple operational sources and transforms it into features used to train predictive models.
+
+| Data Source | Description |
+|-------------|-------------|
+| Weather Data | Real-time and historical environmental signals |
+| Historical Claims | Past claim patterns used to identify disruption trends |
+| Worker Activity Data | Worker operating hours and geographic mobility patterns |
+
+The processed features are used to train and update multiple models that influence pricing, risk prediction, and fraud detection.
+
+---
+
+## 10.3 Risk Intelligence Engine
+
+The predictive engine evaluates disruption probability for each geographic zone by analyzing environmental signals and historical event patterns.
+
+### Input Signals
+
+| Input Signal | Purpose |
+|--------------|---------|
+| Weather Forecast | Estimates likelihood of rainfall or extreme weather |
+| Seasonal Data | Captures climate cycles such as monsoon patterns |
+| Zone Risk Index | Identifies historically flood-prone areas |
+| Claim Density | Measures historical disruption frequency |
+
+### Output Signals
+
+| Output | Description |
+|-------|-------------|
+| Risk Score | Probability of disruption within a specific geographic zone |
+| Risk Zone | Geographic region predicted to experience disruption |
+| Expected Claims | Estimated number of potential payouts |
+
+These predictions allow the platform to anticipate disruption risk and adjust operational parameters such as pricing and insurer exposure monitoring.
+
+# 11. Scalability, Reliability, and Security
+
+GigShield is designed as a **large-scale distributed system** capable of supporting millions of workers across geographically distributed zones. The architecture prioritizes horizontal scalability, fault tolerance, and strong security guarantees to ensure that disruption detection and payouts remain reliable even under high event loads.
+
+---
+
+## 11.1 Scalability Strategy
+
+The platform achieves scalability through **geospatial partitioning and event-driven processing**.
+
+Instead of processing events individually for each worker, the system groups workers into **geographic grid cells**. When a disruption occurs in a specific cell, the platform processes the event once and applies the outcome to all workers operating within that cell.
+
+| Strategy | Description |
+|----------|-------------|
+| Geospatial Partitioning | Workers and environmental signals are mapped to grid cells for localized processing |
+| Event Streaming | Disruption events are distributed through an event bus |
+| Horizontal Workers | Claim processing workers can scale dynamically based on event volume |
+| Batch Processing | Multiple worker claims are generated in a single processing cycle |
+
+This approach allows the platform to efficiently process disruption events affecting **thousands of workers simultaneously**.
+
+---
+
+## 11.2 Reliability and Fault Tolerance
+
+To maintain operational stability, GigShield separates system responsibilities across independent services. These services communicate through asynchronous event streams rather than tightly coupled service calls.
+
+| Reliability Mechanism | Purpose |
+|-----------------------|---------|
+| Event Queue Buffering | Prevents system overload during disruption spikes |
+| Service Isolation | Limits failure propagation between subsystems |
+| Retry Mechanisms | Automatically retries failed claim processing tasks |
+| Redundant Data Sources | Multiple weather data providers improve reliability |
+
+This design ensures that temporary service failures do not disrupt the entire payout pipeline.
+
+---
+
+## 11.3 Security and Fraud Prevention
+
+Insurance systems are particularly vulnerable to fraudulent activity. GigShield includes multiple security layers to prevent system abuse and ensure that payouts remain legitimate.
+
+### Fraud Detection Layers
+
+| Layer | Function |
+|------|----------|
+| Policy Validation | Confirms that a worker has an active policy |
+| Location Verification | Ensures the worker is operating within the affected zone |
+| Duplicate Claim Detection | Prevents multiple claims for the same event |
+| Machine Learning Analysis | Detects abnormal claim patterns |
+
+The fraud detection model evaluates historical claim patterns and worker behavior to identify anomalies before payouts are executed.
+
+---
+
+## 11.4 Data Security
+
+GigShield protects sensitive worker and financial data using standard security practices.
+
+| Security Practice | Purpose |
+|-------------------|---------|
+| Encrypted Data Storage | Protects sensitive worker information |
+| Secure API Authentication | Prevents unauthorized access |
+| Role-Based Access Control | Limits system access based on user roles |
+| Audit Logging | Tracks all claim and payout activities |
+
+These mechanisms ensure compliance with modern data protection standards while maintaining system transparency.
+
+---
+
+# 12. Conclusion
+
+GigShield proposes a scalable, data-driven approach to protecting gig workers from income instability caused by environmental disruptions. By combining **parametric insurance principles with modern distributed system design**, the platform eliminates the delays and inefficiencies associated with traditional insurance claims.
+
+The system continuously monitors environmental signals, detects disruption events, and automatically compensates affected workers through a transparent and auditable process.
+
+Key capabilities of the platform include:
+
+- automated disruption detection using external data sources  
+- geospatial mapping of workers and events for precise coverage  
+- event-driven claim processing for large-scale operations  
+- machine learning models for risk prediction and fraud detection  
+- transparent claim verification and payout tracking  
+
+Together, these components form a **scalable infrastructure for gig economy income protection**.
+
+As gig-based employment continues to expand globally, platforms like GigShield can provide the financial stability needed for workers to operate confidently despite unpredictable environmental conditions. By bridging the gap between insurance systems and real-time data infrastructure, GigShield demonstrates how modern technology can enable **accessible, automated protection for the future workforce**.
