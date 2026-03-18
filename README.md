@@ -1,11 +1,11 @@
-# GigShield
+# 1. GigShield
 
 **GigShield** is an AI-powered parametric insurance platform designed to protect gig economy workers from income loss caused by external disruptions such as extreme weather, pollution alerts, and government-imposed restrictions.
 
 The system automatically detects disruption events, evaluates their impact on worker earnings, and triggers transparent payouts without requiring manual claims. By combining geospatial intelligence, event-driven architecture, machine learning models, and transparent audit systems, GigShield enables scalable income protection for millions of gig workers.
 
 
-# Problem Statement
+# 2. Problem Statement
 
 ## The Rising Gig Economy
 
