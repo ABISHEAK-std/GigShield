@@ -76,7 +76,7 @@ At the same time, insurers struggle to design products that are:
 - fraud-resistant  
 - automated
 
-- # 3. Solution Overview
+# 3. Solution Overview
 
 ## 3.1 Concept of Parametric Income Protection
 
