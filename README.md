@@ -1039,7 +1039,6 @@ These mechanisms ensure compliance with modern data protection standards while m
 
 GigShield is designed to operate in adversarial environments where coordinated fraud attempts can exploit parametric insurance systems. This section outlines the platform’s defense mechanisms against **GPS spoofing, coordinated fraud rings, and behavioral manipulation attacks**, ensuring system integrity without compromising user experience.
 
----
 
 ## 12.1 Threat Model
 
@@ -1059,7 +1058,6 @@ The platform assumes the presence of sophisticated fraud actors capable of:
 | **Behavioral Mimicry** | Fraudsters simulate inactivity patterns to mimic legitimate disruption. |
 | **Device Manipulation** | Use of emulators, rooted devices, or cloned app environments. |
 
----
 
 ## 12.2 Multi-Signal Validation Architecture
 
@@ -1072,8 +1070,6 @@ The system calculates validity based on the following weighted inputs:
 * **Behavioral Signal:** Historical vs. real-time activity matching.
 * **Platform Activity Signal:** Active status on the gig economy app.
 * **Device Integrity Signal:** Hardware attestation and environment checks.
-
----
 
 ## 12.3 Data Signals Beyond GPS
 
@@ -1089,7 +1085,6 @@ To detect spoofing and validate real-world activity, the system analyzes multipl
 | **Historical Work Patterns** | Detect abnormal inactivity compared to user norms. |
 | **Device Fingerprint** | Identify duplicate accounts or cloned devices. |
 
----
 
 ## 12.4 Behavioral and Temporal Analysis
 
@@ -1102,7 +1097,6 @@ GigShield evaluates worker behavior over time to detect anomalies that suggest f
 | **Static Location** | Perfectly still GPS coordinates over long periods. | Possible Spoofing |
 | **Claim Frequency** | Multiple claims in a short temporal window. | High Fraud Risk |
 
----
 
 ## 12.5 Group Fraud Detection (Coordinated Attacks)
 
@@ -1117,8 +1111,6 @@ GigShield incorporates **graph-based fraud detection** to identify coordinated f
 * **Identical Timestamps:** Identify synchronized attacks.
 * **Shared Device Signatures:** Detect the use of the same emulator profiles across accounts.
 
----
-
 ## 12.6 Location Trust Scoring
 
 The system evaluates the reliability of a worker’s reported location using a composite score:
@@ -1131,7 +1123,6 @@ $$Location Trust Score = GPS_{Consistency} + Cell_{Match} + Motion_{Validation}$
 | **Medium** | Require additional verification (e.g., photo or app ping). |
 | **Low** | Flag as suspicious; block automated payout. |
 
----
 
 ## 12.7 Tiered Claim Decision System
 
@@ -1141,7 +1132,6 @@ To balance fraud prevention with user fairness, GigShield uses a tiered approach
 2.  **Medium Risk:** Delayed verification; requires secondary data check.
 3.  **High Risk:** Manual review by system administrators or automatic rejection.
 
----
 
 ## 12.8 Worker Experience and UX Balance
 
@@ -1152,7 +1142,6 @@ GigShield ensures that fraud detection does not negatively impact genuine users.
 
 > **Example User Message:** *"Your claim is under verification due to temporary network inconsistencies. This process will complete shortly."*
 
----
 
 ## 12.9 Fail-Safe and Fallback Mechanisms
 
@@ -1161,7 +1150,6 @@ In cases where data confidence is low (e.g., widespread network outages), the sy
 * **Temporary Data Loss:** Queue validation for retry after a short interval.
 * **Ambiguous Fraud Score:** Escalate for human-in-the-loop manual review.
 
----
 
 ## 12.10 Summary
 
