@@ -1,8 +1,8 @@
-# 1. GigShield
+# 1. ALLIXA
 
-**GigShield** is an AI-powered parametric insurance platform designed to protect gig economy workers from income loss caused by external disruptions such as extreme weather, pollution alerts, and government-imposed restrictions.
+**ALLIXA** is an AI-powered parametric insurance platform designed to protect gig economy workers from income loss caused by external disruptions such as extreme weather, pollution alerts, and government-imposed restrictions.
 
-The system automatically detects disruption events, evaluates their impact on worker earnings, and triggers transparent payouts without requiring manual claims. By combining geospatial intelligence, event-driven architecture, machine learning models, and transparent audit systems, GigShield enables scalable income protection for millions of gig workers.
+The system automatically detects disruption events, evaluates their impact on worker earnings, and triggers transparent payouts without requiring manual claims. By combining geospatial intelligence, event-driven architecture, machine learning models, and transparent audit systems, ALLIXA enables scalable income protection for millions of gig workers.
 
 ```mermaid
 flowchart TD
@@ -252,7 +252,7 @@ At the same time, insurers struggle to design products that are:
 
 ## 3.1 Concept of Parametric Income Protection
 
-GigShield introduces a **parametric insurance model** designed specifically for gig economy workers. Unlike traditional insurance, parametric insurance does not rely on manual claims or post-event verification. Instead, payouts are triggered automatically when predefined environmental conditions are met.
+ALLIXA introduces a **parametric insurance model** designed specifically for gig economy workers. Unlike traditional insurance, parametric insurance does not rely on manual claims or post-event verification. Instead, payouts are triggered automatically when predefined environmental conditions are met.
 
 These conditions are measured using trusted external data sources such as:
 
@@ -271,9 +271,9 @@ This approach enables:
 - scalable operations across large worker populations  
 
 
-## 3.2 GigShield Platform Overview
+## 3.2 ALLIXA Platform Overview
 
-GigShield operates as a **distributed, event-driven risk protection platform** designed to monitor environmental disruptions and protect gig workers from income instability.
+ALLIXA operates as a **distributed, event-driven risk protection platform** designed to monitor environmental disruptions and protect gig workers from income instability.
 
 The system continuously observes external data sources and maps them to geographic work zones using geospatial indexing. When a disruption event occurs within a worker's operational zone, the system automatically evaluates eligibility and generates payouts.
 
@@ -302,7 +302,7 @@ At a high level, the platform performs the following functions:
 
 ## 3.3 Core Design Principles
 
-GigShield is built around several architectural principles that enable the system to scale efficiently while maintaining transparency and operational efficiency.
+ALLIXA is built around several architectural principles that enable the system to scale efficiently while maintaining transparency and operational efficiency.
 
 ### Automation First
 
@@ -331,7 +331,7 @@ All claim decisions are recorded and verifiable through a transparent audit laye
 
 Traditional insurance relies on a manual claims process that requires documentation, verification, and approval. This process can take days or weeks.
 
-GigShield replaces this model with **parametric triggers** that automatically activate payouts when disruption thresholds are detected.
+ALLIXA replaces this model with **parametric triggers** that automatically activate payouts when disruption thresholds are detected.
 
 Example trigger logic:
 ```
@@ -351,7 +351,7 @@ The result is a significantly faster and more reliable payout system.
 
 ## 4.2 Predictive Risk Intelligence
 
-GigShield incorporates predictive analytics to estimate disruption risk before events occur.
+ALLIXA incorporates predictive analytics to estimate disruption risk before events occur.
 
 The system analyzes:
 
@@ -369,7 +369,7 @@ Risk predictions are visualized through dynamic geospatial heatmaps, helping ins
 
 Traditional insurance pricing relies on static risk categories that rarely adapt to dynamic environmental conditions.
 
-GigShield uses machine learning models to dynamically determine insurance premiums based on:
+ALLIXA uses machine learning models to dynamically determine insurance premiums based on:
 
 - geographic disruption risk
 - seasonal weather trends
@@ -392,14 +392,14 @@ This approach provides several advantages:
 - faster claim processing  
 - better fault tolerance  
 
-The architecture allows GigShield to scale to **millions of workers across thousands of geographic zones** without excessive infrastructure cost.
+The architecture allows ALLIXA to scale to **millions of workers across thousands of geographic zones** without excessive infrastructure cost.
 
 
 ## 4.5 Transparent Claim Verification
 
 Insurance systems often face trust issues because users cannot verify how claims are evaluated.
 
-GigShield addresses this through a **transparent claim verification system**.
+ALLIXA addresses this through a **transparent claim verification system**.
 
 Each payout includes verifiable information such as:
 
@@ -412,9 +412,9 @@ This transparency ensures that workers, insurers, and regulators can independent
 
 ## 4.6 Fraud-Resilient Claim Architecture
 
-GigShield is designed to operate in adversarial environments where malicious actors may attempt to exploit automated insurance systems.
+ALLIXA is designed to operate in adversarial environments where malicious actors may attempt to exploit automated insurance systems.
 
-Unlike traditional parametric platforms that rely heavily on single-source validation (e.g., GPS), GigShield incorporates a **multi-signal fraud detection architecture** that evaluates claims using multiple independent data sources.
+Unlike traditional parametric platforms that rely heavily on single-source validation (e.g., GPS), ALLIXA incorporates a **multi-signal fraud detection architecture** that evaluates claims using multiple independent data sources.
 
 ### Multi-Signal Validation
 
@@ -441,7 +441,7 @@ Claims that deviate significantly from expected behavior are flagged for further
 
 ### Coordinated Fraud Detection
 
-GigShield incorporates **graph-based fraud detection** to identify coordinated attacks.
+ALLIXA incorporates **graph-based fraud detection** to identify coordinated attacks.
 
 Instead of evaluating users individually, the system detects:
 
@@ -453,7 +453,7 @@ This enables detection of large-scale fraud rings attempting to exploit disrupti
 
 ### Location Trust Scoring
 
-Rather than trusting raw GPS data, GigShield computes a **location trust score** using:
+Rather than trusting raw GPS data, ALLIXA computes a **location trust score** using:
 
 - GPS consistency  
 - network validation (cell tower data)  
@@ -463,7 +463,7 @@ Only claims with sufficient trust scores are eligible for automated payouts.
 
 ### Outcome
 
-This architecture transforms GigShield from a basic parametric system into a:
+This architecture transforms ALLIXA from a basic parametric system into a:
 
 **fraud-resilient, adversarially robust insurance platform capable of operating at national scale**
 
@@ -471,7 +471,7 @@ This architecture transforms GigShield from a basic parametric system into a:
 
 ## 5.1 Primary User Segment – Gig Economy Workers
 
-GigShield is designed primarily for workers participating in the **on-demand digital economy**. These workers depend on short-cycle earnings and are highly exposed to environmental disruptions that prevent them from working.
+ALLIXA is designed primarily for workers participating in the **on-demand digital economy**. These workers depend on short-cycle earnings and are highly exposed to environmental disruptions that prevent them from working.
 
 The platform focuses on workers whose income is directly tied to **physical mobility and outdoor activity**.
 
@@ -488,7 +488,7 @@ Because these workers rely on **daily operational activity**, even short disrupt
 
 ## 5.2 Representative User Persona
 
-To illustrate how GigShield serves gig workers, consider the following representative persona.
+To illustrate how ALLIXA serves gig workers, consider the following representative persona.
 
 | Attribute | Example Profile |
 |----------|----------------|
@@ -511,7 +511,7 @@ To illustrate how GigShield serves gig workers, consider the following represent
 
 In these situations, workers typically receive **no compensation for lost time**, even though the disruption is outside their control.
 
-GigShield aims to protect workers like Rajan by providing **automated income protection when disruption events occur**.
+ALLIXA aims to protect workers like Rajan by providing **automated income protection when disruption events occur**.
 
 ## 5.3 Secondary Stakeholders
 
@@ -524,13 +524,13 @@ While gig workers are the primary beneficiaries, several additional stakeholders
 | Regulators | Oversee insurance compliance |
 | Financial institutions | Provide payment and settlement infrastructure |
 
-By creating a transparent and scalable infrastructure for parametric insurance, GigShield enables these stakeholders to participate in a **shared risk protection ecosystem**.
+By creating a transparent and scalable infrastructure for parametric insurance, ALLIXA enables these stakeholders to participate in a **shared risk protection ecosystem**.
 
 # 6. System Architecture
 
 ## 6.1 High-Level Architecture
 
-GigShield is designed as a **distributed event-driven platform** that continuously monitors environmental signals, detects disruption events, and automatically processes claims.
+ALLIXA is designed as a **distributed event-driven platform** that continuously monitors environmental signals, detects disruption events, and automatically processes claims.
 
 The system is composed of several cooperating subsystems:
 
@@ -577,7 +577,7 @@ L --> P[Claim Records Database]
 
 ## 6.2 Architectural Design Principles
 
-The system architecture is guided by several key principles that enable GigShield to operate efficiently at large scale while maintaining reliability and transparency.
+The system architecture is guided by several key principles that enable ALLIXA to operate efficiently at large scale while maintaining reliability and transparency.
 
 ### Event-Driven Processing
 
@@ -607,7 +607,7 @@ This enables:
 
 ### Horizontal Scalability
 
-GigShield is designed so that each subsystem can scale independently.
+ALLIXA is designed so that each subsystem can scale independently.
 
 Processing services such as claim evaluation, fraud detection, and event processing operate through distributed worker nodes connected via event queues. As system load increases, additional workers can be added to handle higher event throughput.
 
@@ -634,7 +634,7 @@ Fault isolation improves:
 
 # 7. Core Platform Components
 
-The GigShield platform is composed of several major system components, each responsible for a distinct function within the platform.
+The ALLIXA platform is composed of several major system components, each responsible for a distinct function within the platform.
 
 | Component | Responsibility |
 |----------|----------------|
@@ -654,7 +654,7 @@ The GigShield platform is composed of several major system components, each resp
 
 # 8. Data Flow
 
-GigShield processes disruption events through an **event-driven pipeline** that transforms external environmental signals into automated insurance payouts.  
+ALLIXA processes disruption events through an **event-driven pipeline** that transforms external environmental signals into automated insurance payouts.  
 The system reacts to real-world disruption events rather than continuously polling worker activity, which allows the platform to scale efficiently across large geographic regions.
 
 
@@ -715,7 +715,7 @@ This gap presents an opportunity for **parametric insurance systems** that rely 
 
 # 9. Technology Stack
 
-GigShield is implemented using a **scalable, modular technology stack** designed for distributed event-driven systems.  
+ALLIXA is implemented using a **scalable, modular technology stack** designed for distributed event-driven systems.  
 The architecture prioritizes **reliability, scalability, and low operational overhead**, enabling the platform to support large worker populations across geographically distributed zones.
 
 ## 9.1 Core Technology Stack
@@ -760,7 +760,7 @@ Workers --> Payment[Payment Gateway]
 ```
 
 
-GigShield addresses this gap by introducing a **data-driven, automated income protection platform** built specifically for the operational patterns of the gig economy.
+ALLIXA addresses this gap by introducing a **data-driven, automated income protection platform** built specifically for the operational patterns of the gig economy.
 
 ## 9.3 Technology Responsibilities
 
@@ -778,7 +778,7 @@ GigShield addresses this gap by introducing a **data-driven, automated income pr
 
 # 10. Machine Learning and Intelligence Layer
 
-Machine learning enables GigShield to improve **risk prediction, pricing accuracy, and fraud detection** by continuously learning from operational data. Instead of relying entirely on static rules, the system uses predictive models to analyze historical disruptions, worker activity patterns, and environmental signals.
+Machine learning enables ALLIXA to improve **risk prediction, pricing accuracy, and fraud detection** by continuously learning from operational data. Instead of relying entirely on static rules, the system uses predictive models to analyze historical disruptions, worker activity patterns, and environmental signals.
 
 This intelligence layer allows the platform to dynamically adapt to changing risk conditions across geographic zones.
 
@@ -831,7 +831,7 @@ These predictions allow the platform to anticipate disruption risk and adjust op
 
 ## 10.4 Advanced Fraud Intelligence Models
 
-GigShield extends traditional fraud detection by incorporating multiple machine learning techniques designed to operate in adversarial environments.
+ALLIXA extends traditional fraud detection by incorporating multiple machine learning techniques designed to operate in adversarial environments.
 
 Rather than relying on a single anomaly detection model, the platform uses a combination of behavioral modeling and graph-based analysis to detect both individual and coordinated fraud attempts.
 
@@ -854,7 +854,7 @@ These features are used to detect:
 
 ### Graph-Based Fraud Detection
 
-To detect coordinated fraud rings, GigShield models worker relationships as a graph structure.
+To detect coordinated fraud rings, ALLIXA models worker relationships as a graph structure.
 
 | Element | Description |
 |--------|------------|
@@ -894,7 +894,7 @@ This ensures that fraud detection is not isolated, but fully integrated into the
 
 ### Outcome
 
-By combining behavioral, statistical, and graph-based models, GigShield achieves:
+By combining behavioral, statistical, and graph-based models, ALLIXA achieves:
 
 - higher fraud detection accuracy  
 - resistance to coordinated attacks  
@@ -904,7 +904,7 @@ This transforms the ML layer into a **core defense system rather than just a sup
 
 # 11. Scalability, Reliability, and Security
 
-GigShield is designed as a **large-scale distributed system** capable of supporting millions of workers across geographically distributed zones. The architecture prioritizes horizontal scalability, fault tolerance, and strong security guarantees to ensure that disruption detection and payouts remain reliable even under high event loads.
+ALLIXA is designed as a **large-scale distributed system** capable of supporting millions of workers across geographically distributed zones. The architecture prioritizes horizontal scalability, fault tolerance, and strong security guarantees to ensure that disruption detection and payouts remain reliable even under high event loads.
 
 ## 11.1 Scalability Strategy
 
@@ -924,7 +924,7 @@ This approach allows the platform to efficiently process disruption events affec
 
 ## 11.2 Reliability and Fault Tolerance
 
-To maintain operational stability, GigShield separates system responsibilities across independent services. These services communicate through asynchronous event streams rather than tightly coupled service calls.
+To maintain operational stability, ALLIXA separates system responsibilities across independent services. These services communicate through asynchronous event streams rather than tightly coupled service calls.
 
 | Reliability Mechanism | Purpose |
 |-----------------------|---------|
@@ -938,9 +938,9 @@ This design ensures that temporary service failures do not disrupt the entire pa
 
 ## 11.3 Security and Fraud Prevention
 
-GigShield implements a **multi-layered fraud prevention architecture** designed to operate in adversarial environments where attackers may attempt coordinated exploitation.
+ALLIXA implements a **multi-layered fraud prevention architecture** designed to operate in adversarial environments where attackers may attempt coordinated exploitation.
 
-Unlike traditional systems that rely on single-point validation (e.g., GPS), GigShield uses **multi-signal verification, behavioral intelligence, and graph-based detection** to ensure claim integrity.
+Unlike traditional systems that rely on single-point validation (e.g., GPS), ALLIXA uses **multi-signal verification, behavioral intelligence, and graph-based detection** to ensure claim integrity.
 
 
 ### Multi-Signal Claim Validation
@@ -974,7 +974,7 @@ This ensures that claims align with realistic worker activity patterns.
 
 ### Coordinated Fraud Detection
 
-GigShield includes **graph-based fraud detection** to identify organized fraud rings.
+ALLIXA includes **graph-based fraud detection** to identify organized fraud rings.
 
 Instead of evaluating users individually, the system detects:
 
@@ -987,7 +987,7 @@ If a cluster exhibits high similarity across multiple signals, it is flagged as 
 
 ### Location Trust Scoring
 
-Rather than trusting raw GPS data, GigShield computes a **Location Trust Score** using multiple inputs.
+Rather than trusting raw GPS data, ALLIXA computes a **Location Trust Score** using multiple inputs.
 
 | Component | Purpose |
 |----------|--------|
@@ -1000,7 +1000,7 @@ Only claims with sufficient trust scores are eligible for automated payouts.
 
 ### Tiered Claim Decision System
 
-To balance fraud prevention with user fairness, GigShield uses a tiered decision model.
+To balance fraud prevention with user fairness, ALLIXA uses a tiered decision model.
 
 | Risk Level | Action |
 |-----------|--------|
@@ -1019,12 +1019,12 @@ This multi-layered approach ensures that:
 - coordinated fraud attacks are detected at scale  
 - genuine workers are not penalized due to network inconsistencies  
 
-GigShield’s fraud prevention system transforms the platform into a **resilient, production-grade insurance infrastructure capable of operating under adversarial conditions**.
+ALLIXA’s fraud prevention system transforms the platform into a **resilient, production-grade insurance infrastructure capable of operating under adversarial conditions**.
 
 
 ## 11.4 Data Security
 
-GigShield protects sensitive worker and financial data using standard security practices.
+ALLIXA protects sensitive worker and financial data using standard security practices.
 
 | Security Practice | Purpose |
 |-------------------|---------|
@@ -1037,7 +1037,7 @@ These mechanisms ensure compliance with modern data protection standards while m
 
 # 12. Adversarial Defense & Anti-Spoofing Strategy
 
-GigShield is designed to operate in adversarial environments where coordinated fraud attempts can exploit parametric insurance systems. This section outlines the platform’s defense mechanisms against **GPS spoofing, coordinated fraud rings, and behavioral manipulation attacks**, ensuring system integrity without compromising user experience.
+ALLIXA is designed to operate in adversarial environments where coordinated fraud attempts can exploit parametric insurance systems. This section outlines the platform’s defense mechanisms against **GPS spoofing, coordinated fraud rings, and behavioral manipulation attacks**, ensuring system integrity without compromising user experience.
 
 
 ## 12.1 Threat Model
@@ -1061,7 +1061,7 @@ The platform assumes the presence of sophisticated fraud actors capable of:
 
 ## 12.2 Multi-Signal Validation Architecture
 
-GigShield replaces single-point GPS validation with a **multi-signal verification system**. A claim is only approved when the combined signals meet predefined trust thresholds.
+ALLIXA replaces single-point GPS validation with a **multi-signal verification system**. A claim is only approved when the combined signals meet predefined trust thresholds.
 
 ### Claim Validation Logic
 
@@ -1088,7 +1088,7 @@ To detect spoofing and validate real-world activity, the system analyzes multipl
 
 ## 12.4 Behavioral and Temporal Analysis
 
-GigShield evaluates worker behavior over time to detect anomalies that suggest fraud:
+ALLIXA evaluates worker behavior over time to detect anomalies that suggest fraud:
 
 | Behavior Signal | Fraud Indicator | Risk Level |
 | :--- | :--- | :--- |
@@ -1100,7 +1100,7 @@ GigShield evaluates worker behavior over time to detect anomalies that suggest f
 
 ## 12.5 Group Fraud Detection (Coordinated Attacks)
 
-GigShield incorporates **graph-based fraud detection** to identify coordinated fraud rings. 
+ALLIXA incorporates **graph-based fraud detection** to identify coordinated fraud rings. 
 
 * **Concept:** Each worker is represented as a node in a graph.
 * **Connections:** Links are formed based on similarity in location, timing, device characteristics, and claim patterns.
@@ -1126,7 +1126,7 @@ $$Location Trust Score = GPS_{Consistency} + Cell_{Match} + Motion_{Validation}$
 
 ## 12.7 Tiered Claim Decision System
 
-To balance fraud prevention with user fairness, GigShield uses a tiered approach:
+To balance fraud prevention with user fairness, ALLIXA uses a tiered approach:
 
 1.  **Low Risk:** Instant payout processed via smart contract.
 2.  **Medium Risk:** Delayed verification; requires secondary data check.
@@ -1135,7 +1135,7 @@ To balance fraud prevention with user fairness, GigShield uses a tiered approach
 
 ## 12.8 Worker Experience and UX Balance
 
-GigShield ensures that fraud detection does not negatively impact genuine users. The system follows these UX principles:
+ALLIXA ensures that fraud detection does not negatively impact genuine users. The system follows these UX principles:
 * Avoid direct fraud accusations.
 * Provide clear, neutral status updates.
 * Minimize payout delays for users with high historical trust scores.
@@ -1153,14 +1153,14 @@ In cases where data confidence is low (e.g., widespread network outages), the sy
 
 ## 12.10 Summary
 
-The adversarial defense layer transforms GigShield into a fraud-resilient parametric insurance platform. By combining multi-signal validation, graph-based detection, and trust scoring, GigShield ensures:
+The adversarial defense layer transforms ALLIXA into a fraud-resilient parametric insurance platform. By combining multi-signal validation, graph-based detection, and trust scoring, ALLIXA ensures:
 * **Fraudulent claims** are blocked at scale.
 * **Coordinated attacks** are detected before liquidity is drained.
 * **Genuine workers** receive fair, automated, and timely payouts.
 
 # 13. Conclusion
 
-GigShield proposes a scalable, data-driven approach to protecting gig workers from income instability caused by environmental disruptions. By combining **parametric insurance principles with modern distributed system design**, the platform eliminates the delays and inefficiencies associated with traditional insurance claims.
+ALLIXA proposes a scalable, data-driven approach to protecting gig workers from income instability caused by environmental disruptions. By combining **parametric insurance principles with modern distributed system design**, the platform eliminates the delays and inefficiencies associated with traditional insurance claims.
 
 The system continuously monitors environmental signals, detects disruption events, and automatically compensates affected workers through a transparent and auditable process.
 
@@ -1174,4 +1174,4 @@ Key capabilities of the platform include:
 
 Together, these components form a **scalable infrastructure for gig economy income protection**.
 
-As gig-based employment continues to expand globally, platforms like GigShield can provide the financial stability needed for workers to operate confidently despite unpredictable environmental conditions. By bridging the gap between insurance systems and real-time data infrastructure, GigShield demonstrates how modern technology can enable **accessible, automated protection for the future workforce**.
+As gig-based employment continues to expand globally, platforms like ALLIXA can provide the financial stability needed for workers to operate confidently despite unpredictable environmental conditions. By bridging the gap between insurance systems and real-time data infrastructure, ALLIXA demonstrates how modern technology can enable **accessible, automated protection for the future workforce**.
