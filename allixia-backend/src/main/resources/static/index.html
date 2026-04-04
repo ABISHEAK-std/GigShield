@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALLIXIA - AI-Powered Worker Insurance</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --success: #22c55e;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            --info: #3b82f6;
+            --light: #f8fafc;
+            --dark: #1e293b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a, .btn {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-success {
+            background: var(--success);
+            color: white;
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            color: white;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .hero {
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card i {
+            font-size: 3em;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #64748b;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 30px;
+        }
+
+        .card h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .stat-card h3 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .alert {
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert.show {
+            display: block;
+        }
+
+        .alert-success {
+            background: #dcfce7;
+            color: #166534;
+            border-left: 4px solid var(--success);
+        }
+
+        .alert-danger {
+            background: #fee2e2;
+            color: #991b1b;
+            border-left: 4px solid var(--danger);
+        }
+
+        .alert-info {
+            background: #dbeafe;
+            color: #1e40af;
+            border-left: 4px solid var(--info);
+        }
+
+        .premium-breakdown {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .premium-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .premium-item:last-child {
+            border-bottom: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: var(--primary);
+        }
+
+        .policy-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .policy-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .policy-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .badge-active {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .badge-inactive {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .claim-card {
+            background: white;
+            border-left: 4px solid var(--info);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .claim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .claim-amount {
+            font-size: 1.5em;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .loader {
+            border: 4px solid #f3f4f6;
+            border-top: 4px solid var(--primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .user-info {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .user-info.show {
+            display: inline-block;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        .trigger-status {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .trigger-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--success);
+        }
+
+        .trigger-item.active {
+            border-left-color: var(--warning);
+            background: #fef3c7;
+        }
+
+        .trigger-item h4 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .trigger-item p {
+            color: #64748b;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-shield-alt"></i> ALLIXIA
+            </div>
+            <div class="nav-links">
+                <a href="#" onclick="showPage('home')" id="nav-home">Home</a>
+                <a href="#" onclick="showPage('register')" id="nav-register" class="nav-auth">Register</a>
+                <a href="#" onclick="showPage('login')" id="nav-login" class="nav-auth">Login</a>
+                <a href="#" onclick="showPage('dashboard')" id="nav-dashboard" class="nav-protected hidden">Dashboard</a>
+                <a href="#" onclick="showPage('policies')" id="nav-policies" class="nav-protected hidden">Policies</a>
+                <a href="#" onclick="showPage('claims')" id="nav-claims" class="nav-protected hidden">Claims</a>
+                <span class="user-info" id="user-info"></span>
+                <button class="btn btn-danger hidden" id="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home-page" class="page active">
+        <div class="hero">
+            <h1><i class="fas fa-shield-alt"></i> ALLIXIA</h1>
+            <p>AI-Powered Parametric Insurance for Gig Economy Workers</p>
+            <p style="font-size: 1em; opacity: 0.8;">Zero-Touch Claims • Dynamic Pricing • Instant Payouts</p>
+            <div style="margin-top: 30px;">
+                <button class="btn btn-primary" onclick="showPage('register')" style="font-size: 1.1em; padding: 15px 40px;">
+                    <i class="fas fa-user-plus"></i> Get Started Now
+                </button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI-Powered Pricing</h3>
+                    <p>Dynamic premiums based on hyper-local risk factors. Pay ₹20-100/week based on your location and work patterns.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Zero-Touch Claims</h3>
+                    <p>Automated claim detection and instant approval. No forms, no waiting. Payouts in under 2 seconds.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-satellite-dish"></i>
+                    <h3>5 Active Triggers</h3>
+                    <p>Real-time monitoring of disasters, weather, AQI, traffic disruptions, and more. Protection 24/7.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-check"></i>
+                    <h3>₹2,000 Coverage</h3>
+                    <p>Get compensated for income loss due to disruptions. Fair, transparent, and instant.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Page -->
+    <div id="register-page" class="page">
+        <div class="container">
+            <div class="card" style="max-width: 600px; margin: 0 auto;">
+                <h2><i class="fas fa-user-plus"></i> Worker Registration</h2>
+                <div id="register-alert"></div>
+                
+                <form onsubmit="register(event)">
+                    <div class="form-group">
+                        <label><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="reg-name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" id="reg-phone" required placeholder="10-digit mobile number" pattern="[0-9]{10}">
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="reg-email" required placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-lock"></i> Password</label>
+                        <input type="password" id="reg-password" required placeholder="Minimum 6 characters" minlength="6">
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-briefcase"></i> Worker Type</label>
+                        <select id="reg-worker-type" required>
+                            <option value="">Select worker type</option>
+                            <option value="DELIVERY_PARTNER">Delivery Partner</option>
+                            <option value="RIDE_HAILING_DRIVER">Ride Hailing Driver</option>
+                            <option value="DAILY_WAGE_LABORER">Daily Wage Laborer</option>
+                            <option value="CONSTRUCTION_WORKER">Construction Worker</option>
+                            <option value="OTHER">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-map-marker-alt"></i> City</label>
+                        <input type="text" id="reg-city" required placeholder="e.g., Mumbai">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1em;">
+                        <i class="fas fa-user-plus"></i> Register Now
+                    </button>
+                </form>
+
+                <p style="text-align: center; margin-top: 20px; color: #64748b;">
+                    Already have an account? <a href="#" onclick="showPage('login')" style="color: var(--primary); font-weight: 600;">Login here</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="login-page" class="page">
+        <div class="container">
+            <div class="card" style="max-width: 500px; margin: 0 auto;">
+                <h2><i class="fas fa-sign-in-alt"></i> Worker Login</h2>
+                <div id="login-alert"></div>
+                
+                <form onsubmit="login(event)">
+                    <div class="form-group">
+                        <label><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" id="login-phone" required placeholder="10-digit mobile number" pattern="[0-9]{10}">
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-lock"></i> Password</label>
+                        <input type="password" id="login-password" required placeholder="Enter your password">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.1em;">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                </form>
+
+                <p style="text-align: center; margin-top: 20px; color: #64748b;">
+                    Don't have an account? <a href="#" onclick="showPage('register')" style="color: var(--primary); font-weight: 600;">Register here</a>
+                </p>
+
+                <div style="margin-top: 30px; padding: 20px; background: #f8fafc; border-radius: 10px;">
+                    <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-bolt"></i> Quick Demo</h4>
+                    <p style="color: #64748b; margin-bottom: 15px;">Try our demo account to explore the platform:</p>
+                    <button class="btn btn-secondary" onclick="quickDemo()" style="width: 100%;">
+                        <i class="fas fa-rocket"></i> Launch Demo Account
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboard-page" class="page">
+        <div class="container">
+            <h1 style="color: white; margin-bottom: 30px;">
+                <i class="fas fa-tachometer-alt"></i> Dashboard
+            </h1>
+
+            <div id="dashboard-alert"></div>
+
+            <!-- Stats -->
+            <div class="grid">
+                <div class="stat-card">
+                    <i class="fas fa-file-contract" style="font-size: 2em; opacity: 0.8;"></i>
+                    <h3 id="stat-policies">0</h3>
+                    <p>Active Policies</p>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, var(--success), #16a34a);">
+                    <i class="fas fa-hand-holding-dollar" style="font-size: 2em; opacity: 0.8;"></i>
+                    <h3 id="stat-claims">0</h3>
+                    <p>Total Claims</p>
+                </div>
+                <div class="stat-card" style="background: linear-gradient(135deg, var(--warning), #dc2626);">
+                    <i class="fas fa-rupee-sign" style="font-size: 2em; opacity: 0.8;"></i>
+                    <h3 id="stat-payouts">₹0</h3>
+                    <p>Total Payouts</p>
+                </div>
+            </div>
+
+            <!-- Buy New Policy -->
+            <div class="card">
+                <h2><i class="fas fa-shield-plus"></i> Buy New Policy</h2>
+                
+                <div class="form-group">
+                    <label><i class="fas fa-map-marker-alt"></i> Get Premium Quote for Your Location</label>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="number" id="quote-lat" placeholder="Latitude (e.g., 19.0760)" step="0.0001" style="flex: 1;">
+                        <input type="number" id="quote-lng" placeholder="Longitude (e.g., 72.8777)" step="0.0001" style="flex: 1;">
+                        <button class="btn btn-secondary" onclick="getPremiumQuote()">
+                            <i class="fas fa-calculator"></i> Calculate
+                        </button>
+                    </div>
+                    <small style="color: #64748b; display: block; margin-top: 5px;">
+                        <i class="fas fa-location-arrow"></i> 
+                        <a href="#" onclick="getCurrentLocation()" style="color: var(--primary);">Use my current location</a>
+                    </small>
+                </div>
+
+                <div id="premium-quote" class="hidden">
+                    <div class="premium-breakdown">
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">
+                            <i class="fas fa-calculator"></i> Premium Breakdown
+                        </h3>
+                        <div class="premium-item">
+                            <span>Base Premium:</span>
+                            <span>₹<span id="quote-base">50</span></span>
+                        </div>
+                        <div class="premium-item">
+                            <span>Disaster Risk Adjustment:</span>
+                            <span id="quote-risk-sign">-</span>₹<span id="quote-risk">0</span></span>
+                        </div>
+                        <div class="premium-item">
+                            <span>Safety Discount:</span>
+                            <span>-₹<span id="quote-safety">0</span></span>
+                        </div>
+                        <div class="premium-item">
+                            <span>Seasonal Risk:</span>
+                            <span>+₹<span id="quote-seasonal">0</span></span>
+                        </div>
+                        <div class="premium-item">
+                            <span>Activity Discount:</span>
+                            <span>-₹<span id="quote-activity">0</span></span>
+                        </div>
+                        <div class="premium-item">
+                            <span><i class="fas fa-rupee-sign"></i> Weekly Premium:</span>
+                            <span>₹<span id="quote-final">50</span></span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-success" onclick="buyPolicy()" style="width: 100%; padding: 15px; font-size: 1.1em;">
+                        <i class="fas fa-shopping-cart"></i> Buy Policy for ₹<span id="buy-premium">50</span>/week
+                    </button>
+                </div>
+            </div>
+
+            <!-- Active Triggers Status -->
+            <div class="card">
+                <h2><i class="fas fa-satellite-dish"></i> Active Monitoring Triggers</h2>
+                <p style="color: #64748b; margin-bottom: 20px;">5 automated systems monitoring disruptions 24/7</p>
+                
+                <div class="trigger-status">
+                    <div class="trigger-item">
+                        <h4><i class="fas fa-satellite"></i> NASA EONET</h4>
+                        <p>Disasters, Floods, Wildfires</p>
+                        <small style="color: var(--success);">● Active</small>
+                    </div>
+                    <div class="trigger-item">
+                        <h4><i class="fas fa-cloud-rain"></i> Weather</h4>
+                        <p>Heavy Rain, Temperature</p>
+                        <small style="color: var(--success);">● Active</small>
+                    </div>
+                    <div class="trigger-item">
+                        <h4><i class="fas fa-wind"></i> Air Quality</h4>
+                        <p>AQI Monitoring</p>
+                        <small style="color: var(--success);">● Active</small>
+                    </div>
+                    <div class="trigger-item">
+                        <h4><i class="fas fa-traffic-light"></i> Traffic</h4>
+                        <p>Commute Disruptions</p>
+                        <small style="color: var(--success);">● Active</small>
+                    </div>
+                    <div class="trigger-item">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Emergency</h4>
+                        <p>Other Disruptions</p>
+                        <small style="color: var(--success);">● Active</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Policies Page -->
+    <div id="policies-page" class="page">
+        <div class="container">
+            <h1 style="color: white; margin-bottom: 30px;">
+                <i class="fas fa-file-contract"></i> My Policies
+            </h1>
+
+            <div id="policies-alert"></div>
+            
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 style="margin: 0;"><i class="fas fa-list"></i> All Policies</h2>
+                    <button class="btn btn-primary" onclick="showPage('dashboard')">
+                        <i class="fas fa-plus"></i> Buy New Policy
+                    </button>
+                </div>
+                
+                <div id="policies-list">
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Claims Page -->
+    <div id="claims-page" class="page">
+        <div class="container">
+            <h1 style="color: white; margin-bottom: 30px;">
+                <i class="fas fa-hand-holding-dollar"></i> My Claims
+            </h1>
+
+            <div id="claims-alert"></div>
+
+            <!-- Info Card -->
+            <div class="card" style="background: linear-gradient(135deg, #dbeafe, #bfdbfe); border: none;">
+                <h3 style="color: var(--info); margin-bottom: 15px;">
+                    <i class="fas fa-info-circle"></i> Zero-Touch Claims Process
+                </h3>
+                <p style="color: #1e40af;">
+                    Claims are automatically generated when our AI detects disruptions affecting your work. 
+                    No manual filing needed! Approval and payout happen instantly.
+                </p>
+                <div style="margin-top: 15px; padding: 15px; background: white; border-radius: 8px;">
+                    <strong style="color: var(--info);">How it works:</strong>
+                    <ol style="margin: 10px 0 0 20px; color: #1e40af;">
+                        <li>Our 5 triggers detect disruptions (flood, heavy rain, etc.)</li>
+                        <li>System checks if you're in affected area</li>
+                        <li>Claim is auto-generated and approved</li>
+                        <li>Payout sent to your account instantly</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 style="margin-bottom: 20px;"><i class="fas fa-history"></i> Claims History</h2>
+                
+                <div id="claims-list">
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // API Base URL
+        const API_URL = 'http://localhost:8082/api';
+        
+        // Auth State
+        let currentUser = null;
+        let authToken = null;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            checkAuth();
+        });
+
+        // Check Authentication
+        function checkAuth() {
+            const token = localStorage.getItem('authToken');
+            const user = localStorage.getItem('currentUser');
+            
+            if (token && user) {
+                authToken = token;
+                currentUser = JSON.parse(user);
+                updateUIForAuth(true);
+            } else {
+                updateUIForAuth(false);
+            }
+        }
+
+        // Update UI for Auth State
+        function updateUIForAuth(isAuthenticated) {
+            const authElements = document.querySelectorAll('.nav-auth');
+            const protectedElements = document.querySelectorAll('.nav-protected');
+            const logoutBtn = document.getElementById('logout-btn');
+            const userInfo = document.getElementById('user-info');
+
+            if (isAuthenticated) {
+                authElements.forEach(el => el.classList.add('hidden'));
+                protectedElements.forEach(el => el.classList.remove('hidden'));
+                logoutBtn.classList.remove('hidden');
+                userInfo.classList.add('show');
+                userInfo.innerHTML = `<i class="fas fa-user"></i> ${currentUser.name}`;
+            } else {
+                authElements.forEach(el => el.classList.remove('hidden'));
+                protectedElements.forEach(el => el.classList.add('hidden'));
+                logoutBtn.classList.add('hidden');
+                userInfo.classList.remove('show');
+            }
+        }
+
+        // Show Page
+        function showPage(pageName) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show selected page
+            document.getElementById(`${pageName}-page`).classList.add('active');
+
+            // Load data if needed
+            if (pageName === 'dashboard' && currentUser) {
+                loadDashboard();
+            } else if (pageName === 'policies' && currentUser) {
+                loadPolicies();
+            } else if (pageName === 'claims' && currentUser) {
+                loadClaims();
+            }
+        }
+
+        // Show Alert
+        function showAlert(elementId, message, type = 'success') {
+            const alertDiv = document.getElementById(elementId);
+            alertDiv.className = `alert alert-${type} show`;
+            alertDiv.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i> ${message}`;
+            
+            setTimeout(() => {
+                alertDiv.classList.remove('show');
+            }, 5000);
+        }
+
+        // Register
+        async function register(event) {
+            event.preventDefault();
+            
+            const data = {
+                name: document.getElementById('reg-name').value,
+                phone: document.getElementById('reg-phone').value,
+                email: document.getElementById('reg-email').value,
+                password: document.getElementById('reg-password').value,
+                workerType: document.getElementById('reg-worker-type').value,
+                city: document.getElementById('reg-city').value
+            };
+
+            try {
+                const response = await fetch(`${API_URL}/auth/register`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showAlert('register-alert', 'Registration successful! Logging you in...', 'success');
+                    
+                    // Auto login - map backend response to frontend format
+                    setTimeout(() => {
+                        authToken = result.token;
+                        currentUser = {
+                            id: result.userId,
+                            name: result.name,
+                            email: result.email
+                        };
+                        localStorage.setItem('authToken', authToken);
+                        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                        updateUIForAuth(true);
+                        showPage('dashboard');
+                    }, 1500);
+                } else {
+                    showAlert('register-alert', result.message || 'Registration failed', 'danger');
+                }
+            } catch (error) {
+                showAlert('register-alert', 'Connection error. Please try again.', 'danger');
+            }
+        }
+
+        // Login
+        async function login(event) {
+            event.preventDefault();
+            
+            const data = {
+                phone: document.getElementById('login-phone').value,
+                password: document.getElementById('login-password').value
+            };
+
+            try {
+                const response = await fetch(`${API_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    authToken = result.token;
+                    currentUser = {
+                        id: result.userId,
+                        name: result.name,
+                        email: result.email
+                    };
+                    localStorage.setItem('authToken', authToken);
+                    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                    updateUIForAuth(true);
+                    showPage('dashboard');
+                    showAlert('dashboard-alert', `Welcome back, ${currentUser.name}!`, 'success');
+                } else {
+                    showAlert('login-alert', result.message || 'Login failed', 'danger');
+                }
+            } catch (error) {
+                showAlert('login-alert', 'Connection error. Please try again.', 'danger');
+            }
+        }
+
+        // Quick Demo
+        async function quickDemo() {
+            const phone = '9876543210';
+            
+            try {
+                const response = await fetch(`${API_URL}/demo/quick-setup/${phone}`, {
+                    method: 'POST'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    authToken = result.token;
+                    currentUser = {
+                        id: result.userId,
+                        name: result.workerName,
+                        email: result.phoneNumber + '@worker.com'
+                    };
+                    localStorage.setItem('authToken', authToken);
+                    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                    updateUIForAuth(true);
+                    showPage('dashboard');
+                    showAlert('dashboard-alert', '🚀 Demo account loaded! Explore all features.', 'success');
+                } else {
+                    showAlert('login-alert', 'Demo setup failed. Try manual registration.', 'danger');
+                }
+            } catch (error) {
+                showAlert('login-alert', 'Connection error. Please try again.', 'danger');
+            }
+        }
+
+        // Logout
+        function logout() {
+            localStorage.removeItem('authToken');
+            localStorage.removeItem('currentUser');
+            authToken = null;
+            currentUser = null;
+            updateUIForAuth(false);
+            showPage('home');
+        }
+
+        // Get Current Location
+        function getCurrentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        document.getElementById('quote-lat').value = position.coords.latitude.toFixed(4);
+                        document.getElementById('quote-lng').value = position.coords.longitude.toFixed(4);
+                        showAlert('dashboard-alert', 'Location detected! Click Calculate to see your premium.', 'info');
+                    },
+                    (error) => {
+                        showAlert('dashboard-alert', 'Could not get location. Enter manually.', 'danger');
+                    }
+                );
+            } else {
+                showAlert('dashboard-alert', 'Geolocation not supported. Enter manually.', 'danger');
+            }
+        }
+
+        // Get Premium Quote
+        async function getPremiumQuote() {
+            const lat = document.getElementById('quote-lat').value;
+            const lng = document.getElementById('quote-lng').value;
+
+            if (!lat || !lng) {
+                showAlert('dashboard-alert', 'Please enter latitude and longitude', 'danger');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/demo/premium-quote`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        latitude: parseFloat(lat),
+                        longitude: parseFloat(lng)
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    const breakdown = result.premiumBreakdown;
+                    
+                    document.getElementById('quote-base').textContent = breakdown.basePremium.toFixed(2);
+                    document.getElementById('quote-risk').textContent = Math.abs(breakdown.disasterRisk).toFixed(2);
+                    document.getElementById('quote-risk-sign').textContent = breakdown.disasterRisk >= 0 ? '+' : '-';
+                    document.getElementById('quote-safety').textContent = breakdown.safetyDiscount.toFixed(2);
+                    document.getElementById('quote-seasonal').textContent = breakdown.seasonalRisk.toFixed(2);
+                    document.getElementById('quote-activity').textContent = breakdown.activityDiscount.toFixed(2);
+                    document.getElementById('quote-final').textContent = breakdown.finalWeeklyPremium.toFixed(2);
+                    document.getElementById('buy-premium').textContent = breakdown.finalWeeklyPremium.toFixed(2);
+                    
+                    document.getElementById('premium-quote').classList.remove('hidden');
+                    showAlert('dashboard-alert', '✨ Premium calculated using AI! Check the breakdown below.', 'success');
+                } else {
+                    showAlert('dashboard-alert', 'Could not calculate premium', 'danger');
+                }
+            } catch (error) {
+                showAlert('dashboard-alert', 'Connection error. Please try again.', 'danger');
+            }
+        }
+
+        // Buy Policy
+        async function buyPolicy() {
+            const lat = document.getElementById('quote-lat').value;
+            const lng = document.getElementById('quote-lng').value;
+            const premium = document.getElementById('quote-final').textContent;
+
+            if (!currentUser) {
+                showAlert('dashboard-alert', 'Please login first', 'danger');
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/policies`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${authToken}`
+                    },
+                    body: JSON.stringify({
+                        userId: currentUser.id,
+                        coverageType: "WEEKLY_INCOME_PROTECTION",
+                        coverageAmount: 2000,
+                        premiumAmount: parseFloat(premium)
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showAlert('dashboard-alert', `🎉 Policy purchased! Coverage active for 1 week. Policy #${result.policyNumber}`, 'success');
+                    setTimeout(() => loadDashboard(), 1500);
+                } else {
+                    showAlert('dashboard-alert', result.message || 'Could not purchase policy', 'danger');
+                }
+            } catch (error) {
+                showAlert('dashboard-alert', 'Connection error. Please try again.', 'danger');
+            }
+        }
+
+        // Load Dashboard
+        async function loadDashboard() {
+            if (!currentUser) return;
+
+            try {
+                // Load stats
+                const [policiesRes, claimsRes] = await Promise.all([
+                    fetch(`${API_URL}/policies/user/${currentUser.id}/active`, {
+                        headers: { 'Authorization': `Bearer ${authToken}` }
+                    }),
+                    fetch(`${API_URL}/claims/user/${currentUser.id}`, {
+                        headers: { 'Authorization': `Bearer ${authToken}` }
+                    })
+                ]);
+
+                const policies = await policiesRes.json();
+                const claims = await claimsRes.json();
+
+                document.getElementById('stat-policies').textContent = Array.isArray(policies) ? policies.length : 0;
+                document.getElementById('stat-claims').textContent = Array.isArray(claims) ? claims.length : 0;
+                
+                const totalPayouts = Array.isArray(claims) ? 
+                    claims.reduce((sum, claim) => sum + (claim.claimAmount || 0), 0) : 0;
+                document.getElementById('stat-payouts').textContent = `₹${totalPayouts.toFixed(0)}`;
+
+            } catch (error) {
+                console.error('Error loading dashboard:', error);
+            }
+        }
+
+        // Load Policies
+        async function loadPolicies() {
+            if (!currentUser) return;
+
+            const listDiv = document.getElementById('policies-list');
+            listDiv.innerHTML = '<div class="loader"></div>';
+
+            try {
+                const response = await fetch(`${API_URL}/policies/user/${currentUser.id}`, {
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+
+                const policies = await response.json();
+
+                if (Array.isArray(policies) && policies.length > 0) {
+                    listDiv.innerHTML = policies.map(policy => `
+                        <div class="policy-card">
+                            <div class="policy-header">
+                                <div>
+                                    <h3 style="color: var(--primary); margin-bottom: 5px;">
+                                        Policy #${policy.policyNumber}
+                                    </h3>
+                                    <p style="color: #64748b; font-size: 0.9em;">
+                                        <i class="fas fa-calendar"></i> ${new Date(policy.startDate).toLocaleDateString()} - ${new Date(policy.endDate).toLocaleDateString()}
+                                    </p>
+                                </div>
+                                <span class="badge ${policy.status === 'ACTIVE' ? 'badge-active' : 'badge-inactive'}">
+                                    ${policy.status}
+                                </span>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                                <div>
+                                    <small style="color: #64748b;">Coverage</small>
+                                    <p style="font-weight: 600; color: var(--success);">₹${policy.coverageAmount}</p>
+                                </div>
+                                <div>
+                                    <small style="color: #64748b;">Premium</small>
+                                    <p style="font-weight: 600; color: var(--primary);">₹${policy.weeklyPremium}/week</p>
+                                </div>
+                                <div>
+                                    <small style="color: #64748b;">Risk Score</small>
+                                    <p style="font-weight: 600;">${policy.riskScore}/100</p>
+                                </div>
+                                <div>
+                                    <small style="color: #64748b;">Location</small>
+                                    <p style="font-weight: 600;">${policy.gridCell}</p>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    listDiv.innerHTML = `
+                        <div style="text-align: center; padding: 40px; color: #64748b;">
+                            <i class="fas fa-file-contract" style="font-size: 4em; opacity: 0.3; margin-bottom: 20px;"></i>
+                            <h3>No Policies Yet</h3>
+                            <p>Purchase your first policy to get started!</p>
+                            <button class="btn btn-primary" onclick="showPage('dashboard')" style="margin-top: 20px;">
+                                <i class="fas fa-plus"></i> Buy Policy
+                            </button>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                listDiv.innerHTML = '<p style="color: var(--danger); text-align: center;">Error loading policies</p>';
+            }
+        }
+
+        // Load Claims
+        async function loadClaims() {
+            if (!currentUser) return;
+
+            const listDiv = document.getElementById('claims-list');
+            listDiv.innerHTML = '<div class="loader"></div>';
+
+            try {
+                const response = await fetch(`${API_URL}/claims/user/${currentUser.id}`, {
+                    headers: { 'Authorization': `Bearer ${authToken}` }
+                });
+
+                const claims = await response.json();
+
+                if (Array.isArray(claims) && claims.length > 0) {
+                    listDiv.innerHTML = claims.map(claim => `
+                        <div class="claim-card" style="border-left-color: ${claim.status === 'PAID' ? 'var(--success)' : claim.status === 'APPROVED' ? 'var(--info)' : 'var(--warning)'}">
+                            <div class="claim-header">
+                                <div>
+                                    <h3 style="color: var(--primary); margin-bottom: 5px;">
+                                        ${claim.claimNumber}
+                                    </h3>
+                                    <p style="color: #64748b; font-size: 0.9em;">
+                                        <i class="fas fa-exclamation-triangle"></i> ${claim.disruptionType || 'Income Loss'}
+                                    </p>
+                                </div>
+                                <span class="badge ${claim.status === 'PAID' ? 'badge-active' : 'badge-inactive'}">
+                                    ${claim.status}
+                                </span>
+                            </div>
+                            
+                            <div class="claim-amount">₹${claim.claimAmount}</div>
+                            
+                            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e2e8f0;">
+                                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; font-size: 0.9em; color: #64748b;">
+                                    <div>
+                                        <i class="fas fa-clock"></i> Filed: ${new Date(claim.filedAt).toLocaleString()}
+                                    </div>
+                                    ${claim.approvedAt ? `
+                                    <div>
+                                        <i class="fas fa-check"></i> Approved: ${new Date(claim.approvedAt).toLocaleString()}
+                                    </div>
+                                    ` : ''}
+                                    ${claim.paidAt ? `
+                                    <div>
+                                        <i class="fas fa-money-bill-wave"></i> Paid: ${new Date(claim.paidAt).toLocaleString()}
+                                    </div>
+                                    ` : ''}
+                                    ${claim.autoApproved ? `
+                                    <div style="color: var(--success);">
+                                        <i class="fas fa-robot"></i> Auto-Approved
+                                    </div>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                } else {
+                    listDiv.innerHTML = `
+                        <div style="text-align: center; padding: 40px; color: #64748b;">
+                            <i class="fas fa-hand-holding-dollar" style="font-size: 4em; opacity: 0.3; margin-bottom: 20px;"></i>
+                            <h3>No Claims Yet</h3>
+                            <p>You haven't received any claims. Our automated triggers are monitoring 24/7!</p>
+                            <p style="margin-top: 15px; padding: 15px; background: #f8fafc; border-radius: 8px;">
+                                <i class="fas fa-shield-alt" style="color: var(--success);"></i>
+                                Claims are automatically generated when disruptions are detected in your work area.
+                            </p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                listDiv.innerHTML = '<p style="color: var(--danger); text-align: center;">Error loading claims</p>';
+            }
+        }
+    </script>
+</body>
+</html>

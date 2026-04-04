@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ALLIXIA MVP Test</title>
+    <style>
+        body { font-family: Arial; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+        button:hover { background: #0056b3; }
+        pre { background: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 ALLIXIA MVP Test Console</h1>
+
+        <button onclick="testHealth()">1. Health Check</button>
+        <button onclick="testDashboard()">2. Dashboard</button>
+        <button onclick="testQuickSetup()">3. Quick Setup Worker</button>
+        <button onclick="testPremiumQuote()">4. Premium Quote (Mumbai)</button>
+        <button onclick="testTrigger()">5. Trigger Heavy Rain</button>
+
+        <h3>Response:</h3>
+        <pre id="response">Click a button to test...</pre>
+    </div>
+
+    <script>
+        const BASE_URL = 'http://localhost:8080';
+
+        async function testHealth() {
+            try {
+                const res = await fetch(`${BASE_URL}/api/health`);
+                const data = await res.json();
+                showResponse(JSON.stringify(data, null, 2), true);
+            } catch (e) {
+                showResponse(`Error: ${e.message}`, false);
+            }
+        }
+
+        async function testDashboard() {
+            try {
+                const res = await fetch(`${BASE_URL}/api/demo/dashboard`);
+                const data = await res.json();
+                showResponse(JSON.stringify(data, null, 2), true);
+            } catch (e) {
+                showResponse(`Error: ${e.message}`, false);
+            }
+        }
+
+        async function testQuickSetup() {
+            try {
+                const res = await fetch(`${BASE_URL}/api/demo/quick-setup/9876543210`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'}
+                });
+                const data = await res.json();
+                showResponse(JSON.stringify(data, null, 2), true);
+            } catch (e) {
+                showResponse(`Error: ${e.message}`, false);
+            }
+        }
+
+        async function testPremiumQuote() {
+            try {
+                const res = await fetch(`${BASE_URL}/api/demo/premium-quote`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({latitude: 19.0760, longitude: 72.8777})
+                });
+                const data = await res.json();
+                showResponse(JSON.stringify(data, null, 2), true);
+            } catch (e) {
+                showResponse(`Error: ${e.message}`, false);
+            }
+        }
+
+        async function testTrigger() {
+            try {
+                const res = await fetch(`${BASE_URL}/api/demo/trigger/HEAVY_RAIN`, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({latitude: 19.0760, longitude: 72.8777})
+                });
+                const data = await res.json();
+                showResponse(JSON.stringify(data, null, 2), true);
+            } catch (e) {
+                showResponse(`Error: ${e.message}`, false);
+            }
+        }
+
+        function showResponse(text, success) {
+            const el = document.getElementById('response');
+            el.textContent = text;
+            el.className = success ? 'success' : 'error';
+        }
+    </script>
+</body>
+</html>

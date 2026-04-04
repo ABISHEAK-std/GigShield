@@ -1,0 +1,55 @@
+========================================
+  CLEANUP INSTRUCTIONS
+========================================
+
+Since I cannot execute PowerShell commands directly,
+please run one of these options:
+
+OPTION 1 - Quick Cleanup (Recommended)
+----------------------------------------
+1. Open Command Prompt
+2. Navigate to: cd D:\ALLIXA
+3. Run: cleanup-md.bat
+
+This will delete all unnecessary .md files,
+keeping only README.md
+
+OPTION 2 - Manual Deletion
+----------------------------------------
+Delete these files manually:
+- TESTING_GUIDE.md
+- START_MVP_NOW.md
+- SETUP_GUIDE.md
+- RUN_GUIDE.md
+- QUICK_START.md
+- PROJECT_DETAILS.md
+- MVP_GUIDE.md
+- IMPLEMENTATION_SUMMARY.md
+- HACKATHON_SUBMISSION.md
+- HACKATHON_README.md
+- FINAL_SUBMISSION_GUIDE.md
+- FINAL_MVP_README.md
+- DYNAMIC_VERIFICATION.md
+- DEMO_VIDEO_SCRIPT.md
+- BUILD_SUMMARY.md
+- ALLIXIA_README.md
+
+KEEP THESE FILES:
+✓ README.md (main documentation)
+✓ allixia-backend\README.md (backend docs)
+
+OPTION 3 - Single Command
+----------------------------------------
+Copy and run this in Command Prompt:
+
+cd D:\ALLIXA && del /f TESTING_GUIDE.md START_MVP_NOW.md SETUP_GUIDE.md RUN_GUIDE.md QUICK_START.md PROJECT_DETAILS.md MVP_GUIDE.md IMPLEMENTATION_SUMMARY.md HACKATHON_SUBMISSION.md HACKATHON_README.md FINAL_SUBMISSION_GUIDE.md FINAL_MVP_README.md DYNAMIC_VERIFICATION.md DEMO_VIDEO_SCRIPT.md BUILD_SUMMARY.md ALLIXIA_README.md
+
+========================================
+
+After cleanup, you'll have:
+- Clean project structure
+- Only essential documentation
+- README.md for main docs
+- START_HERE.txt and VISUAL_GUIDE.txt for guides
+
+========================================

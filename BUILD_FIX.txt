@@ -1,0 +1,60 @@
+========================================
+  MAVEN BUILD ERROR - QUICK FIX
+========================================
+
+ERROR: Maven cannot delete the target folder
+because the JAR file is locked.
+
+CAUSE:
+The application is probably still running from
+a previous attempt, or the file is locked.
+
+========================================
+  SOLUTION 1 - Quick Fix (Recommended)
+========================================
+
+Run this command:
+
+build-and-run.bat
+
+This will:
+1. Stop any running Java processes
+2. Clean the target folder
+3. Build the project
+4. Start the server
+
+========================================
+  SOLUTION 2 - Manual Steps
+========================================
+
+Step 1: Stop Java process
+   Press Ctrl+C in any running terminal
+   OR
+   taskkill /F /IM java.exe
+
+Step 2: Delete target folder
+   cd D:\ALLIXA\allixia-backend
+   rmdir /s /q target
+
+Step 3: Build without clean
+   mvn install -DskipTests
+
+Step 4: Run
+   mvn spring-boot:run
+
+========================================
+  SOLUTION 3 - Skip Clean
+========================================
+
+cd D:\ALLIXA\allixia-backend
+mvn install -DskipTests
+mvn spring-boot:run
+
+========================================
+
+TIP: If you see the error again:
+- Close any IDE (Eclipse, IntelliJ)
+- Check Task Manager for java.exe
+- Restart your terminal
+
+========================================

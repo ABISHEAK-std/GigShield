@@ -1,0 +1,181 @@
+{
+  "info": {
+    "name": "ALLIXIA - Protect Your Worker",
+    "description": "AI-Powered Parametric Insurance Platform - Demo Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "health"]
+        }
+      }
+    },
+    {
+      "name": "2. Quick Setup Worker (Mumbai)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/demo/quick-setup/9876543210",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "demo", "quick-setup", "9876543210"]
+        },
+        "description": "Complete worker registration with AI-powered dynamic premium"
+      }
+    },
+    {
+      "name": "3. Get Premium Quote (Delhi)",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"latitude\": 28.6139,\n  \"longitude\": 77.2090\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/demo/premium-quote",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "demo", "premium-quote"]
+        },
+        "description": "AI-powered premium calculation with breakdown"
+      }
+    },
+    {
+      "name": "4. Trigger: Heavy Rainfall",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"latitude\": 19.0760,\n  \"longitude\": 72.8777\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/demo/trigger/HEAVY_RAIN",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "demo", "trigger", "HEAVY_RAIN"]
+        },
+        "description": "Simulate heavy rainfall disruption"
+      }
+    },
+    {
+      "name": "5. Trigger: Extreme Heat",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"latitude\": 19.0760,\n  \"longitude\": 72.8777\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/demo/trigger/EXTREME_HEAT",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "demo", "trigger", "EXTREME_HEAT"]
+        },
+        "description": "Simulate extreme heat condition"
+      }
+    },
+    {
+      "name": "6. Trigger: High AQI",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"latitude\": 28.6139,\n  \"longitude\": 77.2090\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/demo/trigger/HIGH_AQI",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "demo", "trigger", "HIGH_AQI"]
+        },
+        "description": "Simulate hazardous air quality"
+      }
+    },
+    {
+      "name": "7. Get Claims for User",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/claims/user/{{userId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "claims", "user", "{{userId}}"]
+        },
+        "description": "View auto-generated claims (replace {{userId}})"
+      }
+    },
+    {
+      "name": "8. Get Payouts for User",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/payouts/user/{{userId}}",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "payouts", "user", "{{userId}}"]
+        },
+        "description": "View instant payouts (replace {{userId}})"
+      }
+    },
+    {
+      "name": "9. Dashboard",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/demo/dashboard",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "demo", "dashboard"]
+        },
+        "description": "View active triggers and events"
+      }
+    },
+    {
+      "name": "10. Complete Workflow Demo",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/demo/workflow/1234567890",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["api", "demo", "workflow", "1234567890"]
+        },
+        "description": "End-to-end automated workflow demonstration"
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "userId",
+      "value": "REPLACE_WITH_USER_ID_FROM_SETUP",
+      "type": "string"
+    }
+  ]
+}

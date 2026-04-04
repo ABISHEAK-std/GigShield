@@ -1,0 +1,1069 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-04-04 22:07:17 - Starting AllixiaApplication v1.0.0 using Java 17.0.18 with PID 48088 (D:\ALLIXA\allixia-backend\target\allixia-backend-1.0.0.jar started by rohit in D:\ALLIXA)
+2026-04-04 22:07:17 - Running with Spring Boot v3.2.0, Spring v6.1.1
+2026-04-04 22:07:17 - No active profile set, falling back to 1 default profile: "default"
+2026-04-04 22:07:20 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-04 22:07:20 - Finished Spring Data repository scanning in 202 ms. Found 10 JPA repository interfaces.
+2026-04-04 22:07:22 - Tomcat initialized with port 8082 (http)
+2026-04-04 22:07:22 - Starting service [Tomcat]
+2026-04-04 22:07:22 - Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-04-04 22:07:22 - Initializing Spring embedded WebApplicationContext
+2026-04-04 22:07:22 - Root WebApplicationContext: initialization completed in 4323 ms
+2026-04-04 22:07:22 - HikariPool-1 - Starting...
+2026-04-04 22:07:23 - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@361cd35c
+2026-04-04 22:07:23 - HikariPool-1 - Start completed.
+2026-04-04 22:07:24 - Flyway Community Edition 9.22.3 by Redgate
+2026-04-04 22:07:24 - See release notes here: https://rd.gt/416ObMi
+2026-04-04 22:07:24 - 
+2026-04-04 22:07:24 - Database: jdbc:postgresql://ep-wispy-sunset-a1mpi9nn-pooler.ap-southeast-1.aws.neon.tech/neondb (PostgreSQL 17.8)
+2026-04-04 22:07:24 - Flyway upgrade recommended: PostgreSQL 17.8 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 15.
+2026-04-04 22:07:24 - Successfully validated 6 migrations (execution time 00:00.214s)
+2026-04-04 22:07:25 - Current version of schema "public": 6
+2026-04-04 22:07:25 - Schema "public" is up to date. No migration necessary.
+2026-04-04 22:07:25 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-04-04 22:07:26 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-04-04 22:07:26 - HHH000026: Second-level cache disabled
+2026-04-04 22:07:26 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-04-04 22:07:27 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-04-04 22:07:29 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-04-04 22:07:30 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-04 22:07:31 - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-04-04 22:07:32 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-04 22:07:33 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@340fd670, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@282831ea, org.springframework.security.web.context.SecurityContextHolderFilter@4398d, org.springframework.security.web.header.HeaderWriterFilter@582ea857, org.springframework.web.filter.CorsFilter@118932fe, org.springframework.security.web.authentication.logout.LogoutFilter@38de4f1d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50061d56, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ad28f2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7153995c, org.springframework.security.web.session.SessionManagementFilter@537979aa, org.springframework.security.web.access.ExceptionTranslationFilter@58179860, org.springframework.security.web.access.intercept.AuthorizationFilter@52a9c251]
+2026-04-04 22:07:33 - Tomcat started on port 8082 (http) with context path ''
+2026-04-04 22:07:33 - Started AllixiaApplication in 16.856 seconds (process running for 18.027)
+
+?????????????????????????????????????????????????????????????????
+?                                                               ?
+?                    ALLIXIA Backend Started                    ?
+?          AI-Powered Parametric Insurance Platform             ?
+?                                                               ?
+?   Health Check: http://localhost:8080/api/health             ?
+?                                                               ?
+?????????????????????????????????????????????????????????????????
+
+2026-04-04 22:07:33 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:07:33 - Fetching NASA EONET events...
+2026-04-04 22:07:36 - Error fetching EONET events: Could not extract response: no suitable HttpMessageConverter found for response type [interface java.util.Map] and content type [application/rss+xml;charset=utf-8]
+2026-04-04 22:07:36 - [TRIGGER-1] Checking NASA EONET disaster events...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:07:36 - [TRIGGER-2] Checking heavy rainfall conditions...
+Hibernate: 
+    select
+        wd1_0.id,
+        wd1_0.conditions,
+        wd1_0.created_at,
+        wd1_0.grid_cell,
+        wd1_0.humidity,
+        wd1_0.rainfall,
+        wd1_0.temperature,
+        wd1_0.timestamp,
+        wd1_0.wind_speed 
+    from
+        weather_data wd1_0
+2026-04-04 22:07:36 - Mock weather API check completed
+2026-04-04 22:07:36 - [TRIGGER-3] Checking extreme temperature conditions...
+Hibernate: 
+    select
+        wd1_0.id,
+        wd1_0.conditions,
+        wd1_0.created_at,
+        wd1_0.grid_cell,
+        wd1_0.humidity,
+        wd1_0.rainfall,
+        wd1_0.temperature,
+        wd1_0.timestamp,
+        wd1_0.wind_speed 
+    from
+        weather_data wd1_0
+2026-04-04 22:07:36 - [TRIGGER-5] Checking traffic disruptions...
+2026-04-04 22:07:36 - Severe traffic disruption in grid GRID_367_-669: 112 min delay
+Hibernate: 
+    select
+        ct1_0.id,
+        ct1_0.actual_value,
+        ct1_0.event_id,
+        ct1_0.grid_cell,
+        ct1_0.threshold_value,
+        ct1_0.trigger_type,
+        ct1_0.triggered_at 
+    from
+        claim_triggers ct1_0 
+    where
+        ct1_0.grid_cell=?
+2026-04-04 22:07:36 - Trigger TRAFFIC_DISRUPTION already exists for grid GRID_367_-669 - skipping
+2026-04-04 22:07:36 - [TRIGGER-4] Checking air quality index...
+2026-04-04 22:07:36 - Hazardous air quality in grid GRID_281_-770: AQI 386
+Hibernate: 
+    select
+        ct1_0.id,
+        ct1_0.actual_value,
+        ct1_0.event_id,
+        ct1_0.grid_cell,
+        ct1_0.threshold_value,
+        ct1_0.trigger_type,
+        ct1_0.triggered_at 
+    from
+        claim_triggers ct1_0 
+    where
+        ct1_0.grid_cell=?
+2026-04-04 22:07:36 - Trigger HIGH_AQI already exists for grid GRID_281_-770 - skipping
+2026-04-04 22:08:12 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-04 22:08:12 - Initializing Servlet 'dispatcherServlet'
+2026-04-04 22:08:12 - Completed initialization in 2 ms
+2026-04-04 22:08:12 - Cache miss for REQUEST dispatch to '/api/health' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+2026-04-04 22:08:34 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+        and de1_0.grid_cell=?
+2026-04-04 22:08:57 - Grid GRID_1459_8668 is safe (no recent disasters) - discount ?10
+Hibernate: 
+    select
+        gc1_0.id,
+        gc1_0.active_workers,
+        gc1_0.cell_id,
+        gc1_0.center_latitude,
+        gc1_0.center_longitude,
+        gc1_0.created_at,
+        gc1_0.last_updated,
+        gc1_0.risk_score 
+    from
+        grid_cells gc1_0 
+    where
+        gc1_0.cell_id=?
+Hibernate: 
+    select
+        ll1_0.id,
+        ll1_0.accuracy,
+        ll1_0.created_at,
+        ll1_0.grid_cell,
+        ll1_0.latitude,
+        ll1_0.longitude,
+        ll1_0.timestamp,
+        ll1_0.user_id 
+    from
+        location_logs ll1_0 
+    where
+        ll1_0.user_id=? 
+        and ll1_0.timestamp>=? 
+    order by
+        ll1_0.timestamp desc
+2026-04-04 22:08:57 - Calculating dynamic premium for user b8d9abf9-0771-4772-a15a-1cf26127d6f2 at location (13.1483, 80.1955)
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+        and de1_0.grid_cell=?
+2026-04-04 22:08:57 - Grid GRID_1459_8668 is safe (no recent disasters) - discount ?10
+Hibernate: 
+    select
+        gc1_0.id,
+        gc1_0.active_workers,
+        gc1_0.cell_id,
+        gc1_0.center_latitude,
+        gc1_0.center_longitude,
+        gc1_0.created_at,
+        gc1_0.last_updated,
+        gc1_0.risk_score 
+    from
+        grid_cells gc1_0 
+    where
+        gc1_0.cell_id=?
+Hibernate: 
+    select
+        ll1_0.id,
+        ll1_0.accuracy,
+        ll1_0.created_at,
+        ll1_0.grid_cell,
+        ll1_0.latitude,
+        ll1_0.longitude,
+        ll1_0.timestamp,
+        ll1_0.user_id 
+    from
+        location_logs ll1_0 
+    where
+        ll1_0.user_id=? 
+        and ll1_0.timestamp>=? 
+    order by
+        ll1_0.timestamp desc
+2026-04-04 22:08:57 - Premium breakdown - Base: ?50.00, Disaster: +?-10.00, Safety: -?0, Seasonal: +?0, Activity: -?0, Final: ?40.00
+2026-04-04 22:09:34 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+        and de1_0.grid_cell=?
+2026-04-04 22:09:53 - Grid GRID_1459_8668 is safe (no recent disasters) - discount ?10
+Hibernate: 
+    select
+        gc1_0.id,
+        gc1_0.active_workers,
+        gc1_0.cell_id,
+        gc1_0.center_latitude,
+        gc1_0.center_longitude,
+        gc1_0.created_at,
+        gc1_0.last_updated,
+        gc1_0.risk_score 
+    from
+        grid_cells gc1_0 
+    where
+        gc1_0.cell_id=?
+Hibernate: 
+    select
+        ll1_0.id,
+        ll1_0.accuracy,
+        ll1_0.created_at,
+        ll1_0.grid_cell,
+        ll1_0.latitude,
+        ll1_0.longitude,
+        ll1_0.timestamp,
+        ll1_0.user_id 
+    from
+        location_logs ll1_0 
+    where
+        ll1_0.user_id=? 
+        and ll1_0.timestamp>=? 
+    order by
+        ll1_0.timestamp desc
+2026-04-04 22:09:53 - Calculating dynamic premium for user cf095d3d-d4b6-45a0-8dde-641ea10bd0f2 at location (13.1482, 80.1955)
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+        and de1_0.grid_cell=?
+2026-04-04 22:09:53 - Grid GRID_1459_8668 is safe (no recent disasters) - discount ?10
+Hibernate: 
+    select
+        gc1_0.id,
+        gc1_0.active_workers,
+        gc1_0.cell_id,
+        gc1_0.center_latitude,
+        gc1_0.center_longitude,
+        gc1_0.created_at,
+        gc1_0.last_updated,
+        gc1_0.risk_score 
+    from
+        grid_cells gc1_0 
+    where
+        gc1_0.cell_id=?
+Hibernate: 
+    select
+        ll1_0.id,
+        ll1_0.accuracy,
+        ll1_0.created_at,
+        ll1_0.grid_cell,
+        ll1_0.latitude,
+        ll1_0.longitude,
+        ll1_0.timestamp,
+        ll1_0.user_id 
+    from
+        location_logs ll1_0 
+    where
+        ll1_0.user_id=? 
+        and ll1_0.timestamp>=? 
+    order by
+        ll1_0.timestamp desc
+2026-04-04 22:09:53 - Premium breakdown - Base: ?50.00, Disaster: +?-10.00, Safety: -?0, Seasonal: +?0, Activity: -?0, Final: ?40.00
+2026-04-04 22:10:34 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:11:34 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:12:34 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:12:36 - [TRIGGER-2] Checking heavy rainfall conditions...
+Hibernate: 
+    select
+        wd1_0.id,
+        wd1_0.conditions,
+        wd1_0.created_at,
+        wd1_0.grid_cell,
+        wd1_0.humidity,
+        wd1_0.rainfall,
+        wd1_0.temperature,
+        wd1_0.timestamp,
+        wd1_0.wind_speed 
+    from
+        weather_data wd1_0
+2026-04-04 22:12:36 - Mock weather API check completed
+2026-04-04 22:13:34 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:14:34 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:15:35 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:16:35 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:17:35 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:17:36 - [TRIGGER-3] Checking extreme temperature conditions...
+Hibernate: 
+    select
+        wd1_0.id,
+        wd1_0.conditions,
+        wd1_0.created_at,
+        wd1_0.grid_cell,
+        wd1_0.humidity,
+        wd1_0.rainfall,
+        wd1_0.temperature,
+        wd1_0.timestamp,
+        wd1_0.wind_speed 
+    from
+        weather_data wd1_0
+2026-04-04 22:17:36 - [TRIGGER-2] Checking heavy rainfall conditions...
+Hibernate: 
+    select
+        wd1_0.id,
+        wd1_0.conditions,
+        wd1_0.created_at,
+        wd1_0.grid_cell,
+        wd1_0.humidity,
+        wd1_0.rainfall,
+        wd1_0.temperature,
+        wd1_0.timestamp,
+        wd1_0.wind_speed 
+    from
+        weather_data wd1_0
+2026-04-04 22:17:36 - Mock weather API check completed
+2026-04-04 22:18:35 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:19:35 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:20:35 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:21:36 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:22:36 - Fetching NASA EONET events...
+2026-04-04 22:22:38 - Error fetching EONET events: Could not extract response: no suitable HttpMessageConverter found for response type [interface java.util.Map] and content type [application/rss+xml;charset=utf-8]
+2026-04-04 22:22:38 - [TRIGGER-1] Checking NASA EONET disaster events...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:22:38 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:22:38 - [TRIGGER-2] Checking heavy rainfall conditions...
+Hibernate: 
+    select
+        wd1_0.id,
+        wd1_0.conditions,
+        wd1_0.created_at,
+        wd1_0.grid_cell,
+        wd1_0.humidity,
+        wd1_0.rainfall,
+        wd1_0.temperature,
+        wd1_0.timestamp,
+        wd1_0.wind_speed 
+    from
+        weather_data wd1_0
+2026-04-04 22:22:38 - Mock weather API check completed
+2026-04-04 22:23:38 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:24:38 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:25:38 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:26:39 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:27:36 - [TRIGGER-3] Checking extreme temperature conditions...
+Hibernate: 
+    select
+        wd1_0.id,
+        wd1_0.conditions,
+        wd1_0.created_at,
+        wd1_0.grid_cell,
+        wd1_0.humidity,
+        wd1_0.rainfall,
+        wd1_0.temperature,
+        wd1_0.timestamp,
+        wd1_0.wind_speed 
+    from
+        weather_data wd1_0
+2026-04-04 22:27:36 - [TRIGGER-5] Checking traffic disruptions...
+2026-04-04 22:27:36 - Severe traffic disruption in grid GRID_367_-669: 112 min delay
+Hibernate: 
+    select
+        ct1_0.id,
+        ct1_0.actual_value,
+        ct1_0.event_id,
+        ct1_0.grid_cell,
+        ct1_0.threshold_value,
+        ct1_0.trigger_type,
+        ct1_0.triggered_at 
+    from
+        claim_triggers ct1_0 
+    where
+        ct1_0.grid_cell=?
+2026-04-04 22:27:37 - ? Trigger created: TRAFFIC_DISRUPTION in grid GRID_367_-669 (Threshold: 60, Actual: 112)
+2026-04-04 22:27:37 - Processing event Severe traffic jam - 112 min delay in grid GRID_367_-669
+Hibernate: 
+    select
+        distinct ll1_0.user_id 
+    from
+        location_logs ll1_0 
+    where
+        ll1_0.grid_cell=? 
+        and ll1_0.timestamp>=?
+2026-04-04 22:27:37 - Found 0 potentially affected users in grid GRID_367_-669
+Hibernate: 
+    insert 
+    into
+        claim_triggers
+        (actual_value, event_id, grid_cell, threshold_value, trigger_type, triggered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        disaster_events
+        (created_at, eonet_id, event_date, event_type, grid_cell, latitude, longitude, severity, source, status, title, updated_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        claim_triggers
+        (actual_value, event_id, grid_cell, threshold_value, trigger_type, triggered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-04-04 22:27:38 - [TRIGGER-2] Checking heavy rainfall conditions...
+Hibernate: 
+    select
+        wd1_0.id,
+        wd1_0.conditions,
+        wd1_0.created_at,
+        wd1_0.grid_cell,
+        wd1_0.humidity,
+        wd1_0.rainfall,
+        wd1_0.temperature,
+        wd1_0.timestamp,
+        wd1_0.wind_speed 
+    from
+        weather_data wd1_0
+2026-04-04 22:27:38 - Mock weather API check completed
+2026-04-04 22:27:39 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:27:39 - Processing event Severe traffic jam - 112 min delay in grid GRID_367_-669
+Hibernate: 
+    select
+        distinct ll1_0.user_id 
+    from
+        location_logs ll1_0 
+    where
+        ll1_0.grid_cell=? 
+        and ll1_0.timestamp>=?
+2026-04-04 22:27:39 - Found 0 potentially affected users in grid GRID_367_-669
+Hibernate: 
+    insert 
+    into
+        claim_triggers
+        (actual_value, event_id, grid_cell, threshold_value, trigger_type, triggered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-04-04 22:28:39 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:28:39 - Processing event Severe traffic jam - 112 min delay in grid GRID_367_-669
+Hibernate: 
+    select
+        distinct ll1_0.user_id 
+    from
+        location_logs ll1_0 
+    where
+        ll1_0.grid_cell=? 
+        and ll1_0.timestamp>=?
+2026-04-04 22:28:39 - Found 0 potentially affected users in grid GRID_367_-669
+Hibernate: 
+    insert 
+    into
+        claim_triggers
+        (actual_value, event_id, grid_cell, threshold_value, trigger_type, triggered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2026-04-04 22:29:39 - Checking for automated claim triggers...
+Hibernate: 
+    select
+        de1_0.id,
+        de1_0.created_at,
+        de1_0.eonet_id,
+        de1_0.event_date,
+        de1_0.event_type,
+        de1_0.grid_cell,
+        de1_0.latitude,
+        de1_0.longitude,
+        de1_0.severity,
+        de1_0.source,
+        de1_0.status,
+        de1_0.title,
+        de1_0.updated_at 
+    from
+        disaster_events de1_0 
+    where
+        de1_0.event_date>=? 
+    order by
+        de1_0.event_date desc
+2026-04-04 22:29:39 - Processing event Severe traffic jam - 112 min delay in grid GRID_367_-669
+Hibernate: 
+    select
+        distinct ll1_0.user_id 
+    from
+        location_logs ll1_0 
+    where
+        ll1_0.grid_cell=? 
+        and ll1_0.timestamp>=?
+2026-04-04 22:29:39 - Found 0 potentially affected users in grid GRID_367_-669
+Hibernate: 
+    insert 
+    into
+        claim_triggers
+        (actual_value, event_id, grid_cell, threshold_value, trigger_type, triggered_at, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
