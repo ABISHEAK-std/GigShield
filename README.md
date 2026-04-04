@@ -1,4 +1,4 @@
-# 🚀 ALLIXIA - AI-Powered Insurance for Gig Workers
+# ALLIXIA - AI-Powered Insurance for Gig Workers
 
 ## Quick Start
 
@@ -34,13 +34,13 @@ Double-click: `index.html`
 
 ## Features
 
-✅ **Registration Process** - Full UI + JWT authentication  
-✅ **Policy Management** - Create, view, track policies  
-✅ **Dynamic Premium** - AI-powered pricing (₹20-100/week)  
-✅ **Claims Management** - Zero-touch automation  
-✅ **AI Integration** - Hyper-local risk-based pricing  
-✅ **5 Automated Triggers** - NASA EONET, Weather, AQI, Traffic  
-✅ **Zero-Touch UX** - No manual claims needed  
+**Registration Process** - Full UI + JWT authentication  
+**Policy Management** - Create, view, track policies  
+**Dynamic Premium** - AI-powered pricing (₹20-100/week)  
+**Claims Management** - Zero-touch automation  
+**AI Integration** - Hyper-local risk-based pricing  
+**5 Automated Triggers** - NASA EONET, Weather, AQI, Traffic  
+**Zero-Touch UX** - No manual claims needed  
 
 ---
 
