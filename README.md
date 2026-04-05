@@ -1,48 +1,5 @@
 # ALLIXIA - AI-Powered Insurance for Gig Workers
 
-## Quick Start
-
-### Step 1: Start Backend
-```bash
-cd D:\ALLIXA
-run-backend.bat
-```
-
-Wait for: `Started AllixiaApplication in X.XXX seconds`
-
-### Step 2: Verify Backend
-Open browser: `http://localhost:8082/api/health`
-
-Should see: `{"status":"UP"}`
-
-### Step 3: Open Frontend
-Double-click: `index.html`
-
----
-
-## Demo Flow
-
-1. Click **"Launch Demo Account"** on login page
-2. **Dashboard** → Enter location (Lat: 19.0760, Lng: 72.8777)
-3. Click **"Calculate"** → See AI premium breakdown
-4. Click **"Buy Policy"** → Purchase for ₹38-43/week
-5. Visit **"Policies"** → See your active policy
-6. Visit **"Claims"** → Zero-touch explanation
-7. Check **5 Active Triggers** on dashboard
-
----
-
-## Features
-
-**Registration Process** - Full UI + JWT authentication  
-**Policy Management** - Create, view, track policies  
-**Dynamic Premium** - AI-powered pricing (₹20-100/week)  
-**Claims Management** - Zero-touch automation  
-**AI Integration** - Hyper-local risk-based pricing  
-**5 Automated Triggers** - NASA EONET, Weather, AQI, Traffic  
-**Zero-Touch UX** - No manual claims needed  
-
----
 
 ## Technology Stack
 
@@ -52,46 +9,12 @@ Double-click: `index.html`
 - JWT Authentication + BCrypt
 - AI/ML Premium Calculation
 - 5 Automated Triggers
+- Blockchain : Polygon
 
 **Frontend:**
 - HTML5 + CSS3 + Vanilla JS
 - Responsive Design
 - Real-time Premium Calculator
-- Beautiful UI
-
-**Port:** `8082` (Backend) | File (Frontend)
-
----
-
-## Troubleshooting
-
-**Backend won't start?**
-```bash
-# Check Java (need 17+)
-java -version
-
-# Check Maven (need 3.8+)
-mvn -version
-
-# Manual build
-cd allixia-backend
-mvn clean install -DskipTests
-mvn spring-boot:run
-```
-
-**Frontend errors?**
-- Check backend: `http://localhost:8082/api/health`
-- Open browser console (F12)
-- Clear browser cache
-
----
-
-## Documentation
-
-- **Quick Guide:** `START_HERE.txt`
-- **Visual Guide:** `VISUAL_GUIDE.txt`
-
----
 
 **ALLIXIA - Because every worker deserves protection 💪**
 
@@ -267,6 +190,16 @@ Sec --> Sec3[Anomaly Monitoring]
 
 Sec3 --> N
 ```
+
+## Features
+
+**Registration Process** - Full UI + JWT authentication  
+**Policy Management** - Create, view, track policies  
+**Dynamic Premium** - AI-powered pricing (₹20-100/week)  
+**Claims Management** - Zero-touch automation  
+**AI Integration** - Hyper-local risk-based pricing  
+**5 Automated Triggers** - NASA EONET, Weather, AQI, Traffic  
+**Zero-Touch UX** - No manual claims needed  
 
 # 2. Problem Statement
 
